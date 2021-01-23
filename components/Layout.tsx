@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import React, { ReactNode } from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
 
 type Props = {
-  children?: ReactNode
-  title?: string
-}
+  children?: ReactNode;
+  title?: string;
+};
 
 const Layout: React.FC<Props> = ({ children, title = 'This is the default title' }: Props) => (
   <div>
@@ -36,6 +36,6 @@ const Layout: React.FC<Props> = ({ children, title = 'This is the default title'
       <span>I&apos;m here to stay (Footer)</span>
     </footer>
   </div>
-)
+);
 
-export default Layout
+export default Layout;
