@@ -1,7 +1,11 @@
 import * as React from 'react'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './VideoWrapper.module.css'
-import { getFirestore } from '../../utils/firebase';
+import { 
+  getDocument,
+  createDocument,
+  deleteDocument,
+} from '../../utils/firebase';
 
 type RangeType = {
   min: number;
@@ -15,8 +19,6 @@ type VideoWrapperType = {
   width?: number | RangeType;
   height?: number | RangeType;
 };
-
-const COLLECTION_ID = "i2";
 
 const configuration = {
   iceServers: [
@@ -57,14 +59,15 @@ function registerPeerConnectionListeners(peerConnection: RTCPeerConnection): RTC
  * @param props
  */
 const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapperType) => {
-  // Variables
+  const [inCall, setInCall] = useState(false);
+
   const localStreamRef = useRef<MediaStream | null>(null);
   const remoteStreamRef = useRef<MediaStream | null>(null);
   const peerConnectionRef = useRef<RTCPeerConnection | null>(null);
   const roomIdRef = useRef<string | null>('');
-  // DOM Elements
   const localVideoRef = useRef<HTMLVideoElement>(null);
   const remoteVideoRef = useRef<HTMLVideoElement>(null);
+
 
   useEffect(() => {
     const init = async (): Promise<void> => {
@@ -81,14 +84,7 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
   }, []);
 
   const startCall = async (): Promise<void> => {
-    const db = getFirestore();
-    let roomRef = await db.collection('rooms').doc(COLLECTION_ID);
-    const roomSnapshot = await roomRef.get();
-    if (roomSnapshot.exists) {
-      console.log('room already exists, deleting...');
-      await roomRef.delete();
-      roomRef = await db.collection('rooms').doc(COLLECTION_ID);
-    }
+    const roomRef = await createDocument();
     peerConnectionRef.current = registerPeerConnectionListeners(new RTCPeerConnection(configuration));
     // Initializing local stream
     if (localStreamRef.current == null) return console.error('localStreamRef is null!');
@@ -152,14 +148,14 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
           const data = change.doc.data();
           console.log(`Got new remote ICE candidate: ${JSON.stringify(data)}`);
           await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(data));
+          setInCall(true);
         }
       });
     });
   }
 
   const joinRoom = async (): Promise<void> => {
-    const db = getFirestore();
-    const roomRef = await db.collection("rooms").doc(COLLECTION_ID);
+    const roomRef = await getDocument();
     const roomSnapshot = await roomRef.get();
 
     if (roomSnapshot != null && roomSnapshot.exists) {
@@ -207,7 +203,6 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
         },
       };
       await roomRef.update(roomWithAnswer);
-      // Code for creating SDP answer above
 
       // Listening for remote ICE candidates below
       roomRef.collection('callerCandidates').onSnapshot(snapshot => {
@@ -217,10 +212,27 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
             console.log(`Got new remote ICE candidate: ${JSON.stringify(data)}`);
             if(peerConnectionRef.current == null) return console.error('peerConnectionRef is null'); 
             await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(data));
+            setInCall(true);
           }
         });
       });
     }
+  }
+
+  const hangUp = async (): Promise<void> => {
+    const tracks = localStreamRef.current?.getTracks();
+    if (tracks == null) return console.error('tracks is null');
+    tracks.forEach(track => track.stop());
+
+    if (remoteStreamRef.current != null) {
+      remoteStreamRef.current.getTracks().forEach(track => track.stop());
+    }
+
+    if (peerConnectionRef.current != null) {
+      peerConnectionRef.current.close();
+    }
+
+    if (roomIdRef.current != null) deleteDocument()
   }
 
   return (
@@ -230,9 +242,14 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
         <video ref={remoteVideoRef} autoPlay playsInline/>
       </div>
       <div className='video-controls'>
-        <button onClick={startCall}>
-          <span>Call</span>
-        </button>
+        {inCall
+        ? <button onClick={hangUp}>
+            <span>End</span>
+          </button> 
+        : <button onClick={startCall}>
+            <span>Call</span>
+          </button>
+        }
         <button onClick={joinRoom}>
           <span>Join</span>
         </button>
