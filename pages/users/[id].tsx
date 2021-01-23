@@ -10,7 +10,7 @@ type Props = {
   errors?: string
 }
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+const StaticPropsDetail: React.FC<Props> = ({ item, errors }: Props) => {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
