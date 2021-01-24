@@ -67,7 +67,7 @@ const formatDate = (date: Date): string => {
   const time = `${date.getHours()}:${date.getMinutes()}`
   const endDate = new Date(date.getTime() + 3600000);
   const endTime = `${endDate.getHours()}:${endDate.getMinutes()}`;
-  return `${day}, ${month} ${monthDate} at ${time}-${endTime}PM EST`;
+  return `${day}, ${month} ${monthDate} at ${time} - ${endTime}PM EST`;
 }
 
 /*
@@ -83,7 +83,7 @@ const Checkin: React.FC<CheckinType> = ({ date, user }: CheckinType) => {
       <hr className={styles.divider} />
       <span className={styles.profile}>
         <div className={styles.profile}>
-          <Image className={styles.icon} src={'/profile.jpg'} alt="a beautiful human" width={25} height={25} />
+          <Image className={styles.icon} src={'/profile.jpg'} alt="a beautiful human" width={16} height={16} />
           <span className={styles.name}>{user.name}</span>
         </div>
         <span className={styles.link}><a href="/">View meetup</a></span>

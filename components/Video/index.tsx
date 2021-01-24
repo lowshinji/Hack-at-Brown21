@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { 
   getDocument,
   createDocument,
@@ -60,6 +60,7 @@ function registerPeerConnectionListeners(peerConnection: RTCPeerConnection): RTC
  */
 const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapperType) => {
   const [inCall, setInCall] = useState(false);
+  const [roomExists, setRoomExists] = useState(false);
 
   const localStreamRef = useRef<MediaStream | null>(null);
   const remoteStreamRef = useRef<MediaStream | null>(null);
@@ -68,6 +69,12 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
   const localVideoRef = useRef<HTMLVideoElement>(null);
   const remoteVideoRef = useRef<HTMLVideoElement>(null);
 
+  const getRoomInfo = useMemo(
+    () => async () => {
+      const roomRef = await getDocument();
+      return roomRef;
+    }
+  , []);
 
   useEffect(() => {
     const init = async (): Promise<void> => {
@@ -79,8 +86,13 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
       remoteStreamRef.current = new MediaStream();
       remoteVideoRef.current.srcObject = remoteStreamRef.current;
       console.log('Stream:', localVideoRef?.current?.srcObject);
+      // Check if a room exists already
+      const roomRef = await getRoomInfo();
+      const room = await roomRef.get();
+      if(room != null && room.exists) setRoomExists(true);
     }
     init();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const startCall = async (): Promise<void> => {
@@ -155,9 +167,8 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
   }
 
   const joinRoom = async (): Promise<void> => {
-    const roomRef = await getDocument();
+    const roomRef = await getRoomInfo();
     const roomSnapshot = await roomRef.get();
-
     if (roomSnapshot != null && roomSnapshot.exists) {
       // Initializing local stream and peer connection
       console.log('Create PeerConnection with configuration: ', configuration);
@@ -216,6 +227,8 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
           }
         });
       });
+    } else {
+      startCall();
     }
   }
 
@@ -223,16 +236,14 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
     const tracks = localStreamRef.current?.getTracks();
     if (tracks == null) return console.error('tracks is null');
     tracks.forEach(track => track.stop());
-
     if (remoteStreamRef.current != null) {
       remoteStreamRef.current.getTracks().forEach(track => track.stop());
     }
-
     if (peerConnectionRef.current != null) {
       peerConnectionRef.current.close();
     }
-
-    if (roomIdRef.current != null) deleteDocument()
+    if (roomIdRef.current != null) deleteDocument();
+    location.reload();
   }
 
   return (
@@ -246,17 +257,15 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
         </div>
       </div>
       <div className={style.video_controls}>
-        {inCall
-        ? <button className={style.button} onClick={hangUp}>
-            <span>Hang Up</span>
-          </button> 
-        : <button  className={style.button} onClick={startCall}>
-            <span>Call</span>
-          </button>
+        {!inCall
+          ? <button  className={style.button} onClick={joinRoom}>
+              {roomExists ? <span>Join</span> : <span>Start Call</span>}
+            </button>
+          : <button className={style.button} onClick={hangUp}>
+              <span>Hang Up</span>
+            </button>
         }
-        <button  className={style.button} onClick={joinRoom}>
-          <span>Join</span>
-        </button>
+
       </div>
     </>
   )
