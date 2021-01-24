@@ -1,27 +1,12 @@
 import Layout from '../components/Layout';
+import SideBar from '../components/DashboardSideBar/index';
 import styles from '../styles/dashboard.module.scss';
 
 const Dashboard: React.FC = () => {
   return (
     <Layout title="i2">
       <div className={`columns ${styles.page}`}>
-        <div className={`column is-2`}>
-          <div className='columns'>
-            <div id={styles.circle}/>
-            <h2 className={styles.name}>i2</h2>
-          </div>
-          <div className={styles.linkWidget}>
-            <p className={styles.pageLink}>Home</p>
-            <p className={styles.pageLink}>Progress</p>
-            <p className={styles.pageLink}>Learning</p>
-            <p className={styles.pageLink}>Meetings</p>
-          </div>
-
-          <div className={styles.settingWidget}>
-            <p className={styles.pageLink}>Settings</p>
-            <p className={styles.pageLink}>Log Out</p>
-          </div>
-        </div>
+        <SideBar/>
         
         <div className='column'>
           <div className={`columns ${styles.topbar}`}>
