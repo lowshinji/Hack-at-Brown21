@@ -14,14 +14,6 @@ const Dashboard: React.FC = () => {
         <SideBar/>
         <div className='column'>
           <TopBar/>
-          {/* <div className={`${styles.topbar}`}>
-            <div>
-              <input className={`${styles.searchBox} input`} type="text" placeholder="Search dashboard"/>
-            </div>
-            <div>
-              <img className={styles.picture} src='/profile.jpg' alt="profile"></img>
-            </div>
-          </div> */}
 
           <div className={styles.widgets}>
             <div className='columns'>
