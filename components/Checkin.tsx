@@ -2,7 +2,6 @@ import * as React from 'react';
 import Image from 'next/image';
 import styles from './Checkin.module.scss';
 
-
 type CheckinType = {
   // title: string,
   date: Date,
@@ -83,7 +82,7 @@ const Checkin: React.FC<CheckinType> = ({ date, user }: CheckinType) => {
       <hr className={styles.divider} />
       <span className={styles.profile}>
         <div className={styles.profile}>
-          <Image className={styles.icon} src={'/profile.jpg'} alt="a beautiful human" width={16} height={16} />
+          <Image className={styles.icon} src={'/profile1.jpg'} alt="a beautiful human" width={16} height={16} />
           <span className={styles.name}>{user.name}</span>
         </div>
         <span className={styles.link}><a href="/">Go to Meeting</a></span>

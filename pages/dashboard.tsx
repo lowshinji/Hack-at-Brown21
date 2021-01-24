@@ -29,10 +29,10 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className='column'>
-          <DescriptionWidget/>
-          <MeetingWidget />
+          <div className='column'>
+            <DescriptionWidget/>
+            <MeetingWidget />
+          </div>
         </div>
       </div>
     </Layout>
