@@ -55,7 +55,7 @@ $family-sans-serif: 'canada-type-gibson', sans-serif;
 // $link: $green;
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
-$body-background-color: #f2f4f9;
+// $body-background-color: #f2f4f9;
 $progress-bar-background-color: #5a626a;
 $progress-value-background-color: white;
 // Update some of Bulma's component variables
@@ -91,6 +91,5 @@ $input-height: 10px;
 
 body {
   font-family: $family-sans-serif;
-  background-color: $body-background-color;
   color: $black-bis;
 }
