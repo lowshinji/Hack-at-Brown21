@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Layout from '../../../../components/Layout';
 // import { useState } from 'react';
 import LearningSideBar from '../../../../components/LearningSidebar';
-// import { GithubPicker } from 'react-color';
+import LearningModuleHeader from '../../../../components/LearningModuleHeader';
 
 const DesignPage: React.FC = () => {
   // const [paddingBottom, setPaddingBottom] = useState('5');
@@ -14,26 +14,10 @@ const DesignPage: React.FC = () => {
 
   return (
     <Layout title="i2 - Design">
-      <LearningSideBar />
+      <LearningSideBar activeItem="Introduction"/>
       <div style={{ marginLeft: '220px' }}>
         <div style={{ margin: '60px' }}>
-          <div
-            style={{
-              backgroundColor: 'black',
-              height: '176px',
-              borderRadius: '20px',
-              paddingTop: '35px',
-              paddingLeft: '43px',
-              paddingRight: '43px'
-            }}>
-            <h1 style={{ color: 'white', fontWeight: 500, fontSize: '27px', marginBottom: '20px' }}>
-              Module 2: Designing Buttons
-            </h1>
-            <progress className="progress is-small" value="15" max="100">
-              15%
-            </progress>
-          </div>
-
+          <LearningModuleHeader progress={15} section={"Introduction"} />
           <div
             style={{
               backgroundColor: 'white',
@@ -46,7 +30,7 @@ const DesignPage: React.FC = () => {
             }}>
             <h2 style={{ fontWeight: 500, fontSize: '19px' }}>Why Do We Design Buttons?</h2>
             <br />
-            <p style={{ color: '#2f2f2f' }}>
+            <p style={{ color: '#2f2f2f', marginBottom: '4rem' }}>
               In order to design the right interactions, we need to look back at the history and
               origins of physical pushbuttons, a direct predecessor of the UI component so heavily
               used in all digital products today. Buttons are amazing. The touch of a finger setting

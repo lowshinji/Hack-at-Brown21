@@ -25,6 +25,15 @@
   margin-bottom: 40px;
 }
 
+.menuItem.isActive {
+  border-right: 2px solid #0023F7;
+  font-weight: 500;
+}
+
+.menuItem.isActive a {
+  color: #0023F7 !important;
+}
+
 .link {
   font-size: 19px;
   color: black;
