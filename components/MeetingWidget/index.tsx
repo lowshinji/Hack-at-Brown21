@@ -7,7 +7,7 @@ const DescriptionWidget: React.FC = () => {
       <div className={styles.header}>
         <div className={styles.title}>Meetings</div>
         <div>
-          <span className={styles.filter}>Sort by date ▼</span>
+          <span className={styles.filter}>Sort by date <span className={styles.down_carot}>▼</span></span>
           <button className={styles.button} onClick={() => console.log("that tickles")}>+ Add</button>
         </div>
       </div>

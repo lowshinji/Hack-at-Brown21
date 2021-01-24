@@ -1,10 +1,20 @@
 .widget {
   border-radius: 15px;
-  // background-color: #E3E7F2;
+  margin-top: 2.5rem;
   margin-left: 0px;
   width: 400px;
-  height: 300px;
   padding: 0;
+  // max-height: 25rem;
+  // overflow-y: scroll;
+}
+
+.filter {
+  font-weight: 300;  
+}
+
+.down_carot {
+  margin-left: 0.1rem;
+  font-size: 0.7rem;
 }
 
 .title {
@@ -18,7 +28,7 @@
   display: flex;
   align-items: baseline;
   justify-content:space-between;
-  margin: 1rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .button {
@@ -27,5 +37,5 @@
   border: none;
   padding: 0.5rem 1.25rem;
   color: white;
-  margin-left: 0.85rem;
+  margin-left: 1.2rem;
 }

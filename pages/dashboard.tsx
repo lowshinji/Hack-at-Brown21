@@ -29,7 +29,6 @@ const Dashboard: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
             </div>
             <div className='column'>
               <DescriptionWidget/>
