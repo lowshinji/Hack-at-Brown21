@@ -33,3 +33,6 @@ firebase.config.js
 
 # vercel
 .vercel
+
+
+firebase.config

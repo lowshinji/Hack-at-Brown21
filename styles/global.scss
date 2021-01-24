@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+// Import a Google Font
+// @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://p.typekit.net/p.css?s=1&k=htq3msi&ht=tk&f=24349.24350.24351.24354&a=11214875&app=typekit&e=css');
+
+// @font-face {
+// font-family:"canada-type-gibson";
+// src:url("https://use.typekit.net/af/69c1f9/00000000000000007735a53a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/69c1f9/00000000000000007735a53a/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/69c1f9/00000000000000007735a53a/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+// font-display:auto;font-style:normal;font-weight:700;
+// }
+
+// @font-face {
+// font-family:"canada-type-gibson";
+// src:url("https://use.typekit.net/af/410f00/00000000000000007735a53e/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/410f00/00000000000000007735a53e/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/410f00/00000000000000007735a53e/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+// font-display:auto;font-style:italic;font-weight:700;
+// }
+
+// @font-face {
+// font-family:"canada-type-gibson";
+// src:url("https://use.typekit.net/af/017a45/00000000000000007735a53f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/017a45/00000000000000007735a53f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/017a45/00000000000000007735a53f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+// font-display:auto;font-style:italic;font-weight:400;
+// }
+
+@font-face {
+  font-family: 'canada-type-gibson';
+  src: url('https://use.typekit.net/af/987a60/00000000000000007735a543/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/987a60/00000000000000007735a543/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/987a60/00000000000000007735a543/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tk-canada-type-gibson {
+  font-family: 'canada-type-gibson', sans-serif;
+}
+
+// Set your brand colors
+// $purple: #8a4d76;
+// $pink: #fa7c91;
+// $brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+$green: #1a5754;
+
+// Update Bulma's global variables
+$family-sans-serif: 'canada-type-gibson', sans-serif;
+// $grey-dark: $brown;
+// $grey-light: $beige-light;
+// $primary: $green;
+// $link: $green;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+$body-background-color: #f2f4f9;
+$progress-bar-background-color: #5a626a;
+$progress-value-background-color: white;
+// Update some of Bulma's component variables
+// $body-background-color: $white;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+$input-height: 10px;
+
+// Import only what you need from Bulma
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
+
+@import '../node_modules/bulma/sass/elements/button.sass';
+@import '../node_modules/bulma/sass/elements/container.sass';
+@import '../node_modules/bulma/sass/elements/title.sass';
+@import '../node_modules/bulma/sass/elements/table.sass';
+@import '../node_modules/bulma/sass/elements/progress.sass';
+@import '../node_modules/bulma/sass/elements/tag.sass';
+
+@import '../node_modules/bulma/sass/components/dropdown.sass';
+@import '../node_modules/bulma/sass/components/navbar.sass';
+@import '../node_modules/bulma/sass/components/modal.sass';
+@import '../node_modules/bulma/sass/components/tabs.sass';
+@import '../node_modules/bulma/sass/components/card.sass';
+@import '../node_modules/bulma/sass/components/menu.sass';
+
+@import '../node_modules/bulma/sass/layout/hero.sass';
+@import '../node_modules/bulma/sass/layout/section.sass';
+
+@import '../node_modules/bulma/sass/grid/columns.sass';
+@import '../node_modules/bulma/sass/form/_all.sass';
+
+body {
+  font-family: $family-sans-serif;
+  background-color: $body-background-color;
+  color: $black-bis;
+}
