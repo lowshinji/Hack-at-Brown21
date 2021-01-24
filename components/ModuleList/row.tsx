@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './ModuleList.module.scss';
 
 type ModuleInfo = {
@@ -64,7 +65,9 @@ const ModuleRow: React.FC <ModuleInfo> = ({ name, description, length, date, act
       <div className={styles.col2}>{name}: {description}</div>
       <div className={styles.col3}>{length} minutes</div>
       <div className={styles.col4}>{formatDate(date)}</div>
-      <div className={`${styles.col5} button is-black`}>{action}</div>
+      <div className={`${styles.col5} button is-black`}>
+        <Link href={`/learning/design/module-two/introduction`}>{action}</Link> 
+      </div>
     </div>
   )
 };
