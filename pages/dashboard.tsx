@@ -1,5 +1,10 @@
 import Layout from '../components/Layout';
+import TopBar from '../components/TopBar/index';
 import SideBar from '../components/DashboardSideBar/index';
+import WelcomeWidget from '../components/WelcomeWidget/index';
+import LearningWidget from '../components/LearningWidget/index';
+import DescriptionWidget from '../components/DescriptionWidget/index';
+import MeetingWidget from '../components/MeetingWidget/index';
 import styles from '../styles/dashboard.module.scss';
 
 const Dashboard: React.FC = () => {
@@ -7,23 +12,24 @@ const Dashboard: React.FC = () => {
     <Layout title="i2">
       <div className={`columns ${styles.page}`}>
         <SideBar/>
-        
         <div className='column'>
-          <div className={`columns ${styles.topbar}`}>
-            <input className={`${styles.searchBox} input`} type="text" placeholder="Search dashboard"/>
-          </div>
+          <TopBar/>
+          {/* <div className={`${styles.topbar}`}>
+            <div>
+              <input className={`${styles.searchBox} input`} type="text" placeholder="Search dashboard"/>
+            </div>
+            <div>
+              <img className={styles.picture} src='/profile.jpg' alt="profile"></img>
+            </div>
+          </div> */}
 
           <div className={styles.widgets}>
             <div className='columns'>
               <div className='column'>
-                <div className={`${styles.widget} ${styles.blackBackground}`}>
-                  Welcome, Jessica
-                </div>
-                <p>Progress</p>
-                <div className='columns'>
-                  <div className={`column ${styles.widget} ${styles.whiteBackground}`}>
-                    Learning
-                  </div>
+                <WelcomeWidget/>
+                <p className={`${styles.midSpace}`}><b>Progress</b></p>
+                <div className={`columns ${styles.smallSpace} ${styles.alignLeft}`}>
+                  <LearningWidget/>
                   <div className='column'>
                     <div className={`${styles.widget} ${styles.whiteBackground}`}>
                     
@@ -35,7 +41,10 @@ const Dashboard: React.FC = () => {
                 </div>
                 
               </div>
-              
+              <div className='column'>
+                <DescriptionWidget/>
+                <MeetingWidget />
+              </div>
             </div>
           </div>
         </div>

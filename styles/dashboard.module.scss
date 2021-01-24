@@ -1,5 +1,5 @@
 .page {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 35px;
 }
 
@@ -31,22 +31,11 @@
   margin-right: 10px;
 }
 
-.topbar {
-  float: right;
-  height: 350px;
-}
-
-.searchBox {
-  height: 47px;
-  width: 548px;
-  border-radius: 10px;
-  background-color: #F2F4F9;
-  margin-right: 200px;
-}
-
 .widgets {
-  margin-top: 100px;
-  margin-right: 100px;
+  margin-top: 5px;
+  margin-right: 0px;
+  padding-top: 20px;
+  padding-left: 20px;
   background-color: #F2F4F9;
   height: 100%;
 }
@@ -62,4 +51,48 @@
 
 .whiteBackground {
   background-color: white;
+}
+
+.welcomeWidget {
+  height: 200px;
+  width: 600px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.bigText {
+  font-size: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+.smallText {
+  font-size: 18px;
+}
+
+.midSpace {
+  margin-top: 30px;
+}
+
+.smallSpace {
+  margin-top: 15px;
+}
+
+.button {
+  width: 135px;
+  height: 40px;
+}
+
+.alignLeft {
+  margin-left: 0px;
+}
+
+
+img.picture {
+  margin-top: -10px;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px
 }

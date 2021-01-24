@@ -1,0 +1,29 @@
+.widget {
+  border-radius: 15px;
+  background-color: white;
+  margin-left: 0px;
+  width: 300px;
+  height: 400px;
+  padding: 25px;
+}
+
+.smallSpace {
+  margin-top: 15px;
+}
+
+.circleProgress {
+  padding-left: 0px;
+  margin-left: 0px;
+  height: 30%;
+  width: 50%;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.moduleDescriptor {
+  // margin-left: -120px;
+}
