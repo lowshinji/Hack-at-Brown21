@@ -1,34 +1,12 @@
-.page {
-  margin-top: 20px;
-  margin-left: 35px;
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.name {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.linkWidget {
-  margin-top: 100px;
-}
-
-.settingWidget {
-  margin-top: 200px;
-}
-
-.pageLink{
-  font-size: 19px;
-  margin-bottom: 40px;
-}
-
-#circle {
-  width: 47px;
-  height: 47px;
-  -webkit-border-radius: 23.5px;
-  -moz-border-radius: 23.5px;
-  border-radius: 23.5px;
-  background: #C4C4C4;
-  margin-right: 10px;
+.column{
+  width: 97%;
+  padding-right: 3%;
 }
 
 .widgets {
@@ -40,33 +18,10 @@
   height: 100%;
 }
 
-.widget {
-  border-radius: 15px;
-}
-
-.blackBackground {
-  background-color: black;
-  color: white;
-}
-
-.whiteBackground {
-  background-color: white;
-}
-
-.welcomeWidget {
-  height: 200px;
-  width: 600px;
-  padding-top: 30px;
-  padding-left: 30px;
-}
-
 .bigText {
   font-size: 25px;
 }
 
-.bold {
-  font-weight: bold;
-}
 .smallText {
   font-size: 18px;
 }
@@ -82,17 +37,4 @@
 .button {
   width: 135px;
   height: 40px;
-}
-
-.alignLeft {
-  margin-left: 0px;
-}
-
-
-img.picture {
-  margin-top: -10px;
-  object-fit: cover;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px
 }

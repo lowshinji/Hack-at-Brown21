@@ -1,8 +1,30 @@
 .widget {
   border-radius: 15px;
-  // background-color: #E3E7F2;
   margin-left: 0px;
-  width: 400px;
+  width: 450px;
   height: 300px;
   padding: 25px;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: 19px;
+  margin-right: 5.5em;
+}
+
+.button {
+  height: 2em;
+  width: 5em;
+  margin-top: -2px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.meetingEntry {
+  margin-bottom: 1em;
 }
