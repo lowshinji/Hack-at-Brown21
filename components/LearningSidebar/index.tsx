@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './LearningSidebar.module.scss';
 
 type LearningSideBarProps = {
@@ -9,9 +10,11 @@ const LearningSideBar: React.FC<LearningSideBarProps> = ({activeItem = ''}) => {
   
   return (
     <div className={styles.sidenav}>
-      <div className="columns">
-        <div id={styles.circle} />
-        <h2 className={styles.name}>i2</h2>
+      <div className={styles.logo_wrapper}>
+        <div className={`${styles.logo}`}>
+          <Image src="/logo.svg" alt="logo i2" width={32} height={32} />
+          <span className={styles.name}>Imagine Intern.</span>
+        </div>
       </div>
       <div className={styles.middleWidget}>
         <p className={`${styles.menuItem} ${isActive('Introduction')}`}>
