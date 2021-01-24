@@ -1,10 +1,9 @@
-// import Link from 'next/link';
 import Layout from '../components/Layout';
-import styles from '../styles/index.module.css';
+import styles from '../styles/index.module.scss';
 
 const IndexPage: React.FC = () => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="i2">
     <div className='columns'>
       <div className={`${styles.left} column is-one-quarter`}>
         <div className={styles.leftView}>
@@ -40,7 +39,7 @@ const IndexPage: React.FC = () => {
           </div>
           <div className={`columns ${styles.bottom}`}>
             <p className={styles.signIn}>Already have an account? <b>Sign In</b></p>
-            <button className={`button is-black ${styles.button}`}>Sign up</button>
+            <a className={`button is-black ${styles.button}`} href="/dashboard">Sign up</a>
           </div>
         </div>
       </div>

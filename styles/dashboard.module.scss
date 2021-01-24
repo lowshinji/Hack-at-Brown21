@@ -1,0 +1,65 @@
+.page {
+  margin-top: 30px;
+  margin-left: 35px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.linkWidget {
+  margin-top: 100px;
+}
+
+.settingWidget {
+  margin-top: 200px;
+}
+
+.pageLink{
+  font-size: 19px;
+  margin-bottom: 40px;
+}
+
+#circle {
+  width: 47px;
+  height: 47px;
+  -webkit-border-radius: 23.5px;
+  -moz-border-radius: 23.5px;
+  border-radius: 23.5px;
+  background: #C4C4C4;
+  margin-right: 10px;
+}
+
+.topbar {
+  float: right;
+  height: 350px;
+}
+
+.searchBox {
+  height: 47px;
+  width: 548px;
+  border-radius: 10px;
+  background-color: #F2F4F9;
+  margin-right: 200px;
+}
+
+.widgets {
+  margin-top: 100px;
+  margin-right: 100px;
+  background-color: #F2F4F9;
+  height: 100%;
+}
+
+.widget {
+  border-radius: 15px;
+}
+
+.blackBackground {
+  background-color: black;
+  color: white;
+}
+
+.whiteBackground {
+  background-color: white;
+}
