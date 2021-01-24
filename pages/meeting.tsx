@@ -1,11 +1,17 @@
 import Layout from '../components/Layout';
 import Video from '../components/Video';
+import Checkin from '../components/Checkin';
+import SideBar from '../components/DashboardSideBar/index';
 
 const MeetingPage: React.FC = () => (
   <Layout title="About | Next.js + TypeScript Example">
-    <h1>Meeting</h1>
-    <p>Hello this is a cool new meeting!</p>
-    <Video />
+    <div className={`columns`}>
+      <SideBar/>
+      <Video />
+      <div className="column">
+        <Checkin date={new Date()} user={{icon: '', name: 'Jason Michaels'}} />
+      </div>
+    </div>
   </Layout>
 );
 

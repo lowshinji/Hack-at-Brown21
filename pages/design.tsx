@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import LearningSideBar from '../components/LearningSidebar';
 import { GithubPicker } from 'react-color';
 
-const DesignPage = () => {
+const DesignPage: React.FC = () => {
   const [paddingBottom, setPaddingBottom] = useState('5');
   const [paddingTop, setPaddingTop] = useState('5');
   const [paddingLeft, setPaddingLeft] = useState('5');

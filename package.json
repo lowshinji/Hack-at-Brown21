@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@react-firebase/firestore": "^0.5.5",
-    "firebase": "^8.2.4",
+    "@types/react-color": "^3.0.4",
     "bulma": "^0.9.1",
+    "firebase": "^8.2.4",
     "next": "latest",
     "node-sass": "^5.0.0",
     "react": "^16.12.0",

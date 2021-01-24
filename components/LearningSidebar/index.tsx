@@ -1,6 +1,6 @@
 import styles from './LearningSidebar.module.scss';
 
-const LearningSideBar = () => {
+const LearningSideBar: React.FC = () => {
   return (
     <div className={styles.sidenav}>
       <div className="columns">
