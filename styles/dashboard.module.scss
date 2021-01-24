@@ -42,6 +42,8 @@
   padding-top: 20px;
   padding-left: 20px;
   background-color: #F2F4F9;
+  overflow: scroll;
+  max-height: 100vh;
 }
 .widget {
   border-radius: 15px;

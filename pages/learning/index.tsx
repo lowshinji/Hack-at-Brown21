@@ -7,10 +7,10 @@ import styles from '../../styles/learning.module.scss';
 const Dashboard: React.FC = () => {
   return (
     <Layout title="i2">
+      <TopBar/>
+      <SideBar activeItem='Learning'/>
       <div className={`columns ${styles.page}`}>
-        <SideBar/>
         <div className='column'>
-          <TopBar/>
           <div className={styles.columns}>
             <div className={styles.upperBox}>
               <p className={styles.title}><b>Learning Modules</b></p>

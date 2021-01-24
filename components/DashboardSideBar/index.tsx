@@ -14,7 +14,7 @@ const DashboardSideBar: React.FC<DashboardSideBarProps> = ({activeItem = 'Home'}
 
 
   return(
-    <div className={styles.wrapper}>
+    <div className={'column ' + styles.wrapper}>
       <div className={styles.middleWidget}>
         <div 
           className={`${styles.menuItem} ${houseIconActive ? styles.activeMenuItem : ''}`}
