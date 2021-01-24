@@ -1,0 +1,36 @@
+.wrapper {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #FFFFFF;
+  border-left: 3px solid #FE5244;
+  padding: 1.5rem 3rem;
+  max-width: 40rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 16px;
+  font-style: bold;
+  margin-bottom: 0.75rem;
+}
+
+.date {
+  color: #A5A5A5;
+  font-weight: 400;
+}
+
+.divider {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: #C4C4C4;
+}
+
+.profile {
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.icon { border-radius: 100px; }
+.name { margin-left: 0.5rem; }
