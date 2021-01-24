@@ -1,6 +1,5 @@
 import Checkin from '../Checkin';
 import styles from './MeetingWidget.module.scss';
-import Checkin from '../Checkin';
 
 const DescriptionWidget: React.FC = () => {
   return(

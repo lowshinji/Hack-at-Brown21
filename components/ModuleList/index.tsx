@@ -1,4 +1,4 @@
-import ModuleRow from './row.tsx';
+import ModuleRow from './row';
 import styles from './ModuleList.module.scss';
 
 const ModuleList: React.FC = () => {

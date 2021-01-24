@@ -8,8 +8,8 @@ import styles from '../styles/meeting.module.scss';
 const MeetingPage: React.FC = () => (
   <Layout title="About | Next.js + TypeScript Example">
     <div className={styles.page_wrapper}>
-      <SideBar activeItem='Meetings'/>
       <TopBar />
+      <SideBar activeItem='Meetings'/>
 
       <div className={`columns ${styles.wrapper}`}>
         <div className={`column ${styles.video_column}`}>
