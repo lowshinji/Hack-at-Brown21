@@ -1,5 +1,5 @@
 .page {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 35px;
 }
 
@@ -31,21 +31,8 @@
   margin-right: 10px;
 }
 
-.topbar {
-  float: right;
-  // height: 150px;
-}
-
-.searchBox {
-  height: 47px;
-  width: 548px;
-  border-radius: 10px;
-  background-color: #F2F4F9;
-  margin-right: 200px;
-}
-
 .widgets {
-  margin-top: 100px;
+  margin-top: 5px;
   margin-right: 0px;
   padding-top: 20px;
   padding-left: 20px;
@@ -99,4 +86,13 @@
 
 .alignLeft {
   margin-left: 0px;
+}
+
+
+img.picture {
+  margin-top: -10px;
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px
 }
