@@ -86,7 +86,7 @@ const Checkin: React.FC<CheckinType> = ({ date, user }: CheckinType) => {
           <Image className={styles.icon} src={'/profile.jpg'} alt="a beautiful human" width={16} height={16} />
           <span className={styles.name}>{user.name}</span>
         </div>
-        <span className={styles.link}><a href="/">View meetup</a></span>
+        <span className={styles.link}><a href="/">Go to Meeting</a></span>
       </span>
     </div>
   );

@@ -3,6 +3,7 @@ import Layout from '../../../../components/Layout';
 import { useState } from 'react';
 import LearningSideBar from '../../../../components/LearningSidebar';
 import { CompactPicker } from 'react-color';
+import LearningModuleHeader from '../../../../components/LearningModuleHeader';
 
 const DesignPage: React.FC = () => {
   // const [paddingBottom, setPaddingBottom] = useState('5');
@@ -14,23 +15,10 @@ const DesignPage: React.FC = () => {
 
   return (
     <Layout title="i2 - Design">
-      <LearningSideBar />
+      <LearningSideBar activeItem={"Lesson 1"}/>
       <div style={{ marginLeft: '220px' }}>
         <div style={{ margin: '60px' }}>
-          <div
-            style={{
-              backgroundColor: 'black',
-              height: '176px',
-              borderRadius: '20px',
-              paddingTop: '35px',
-              paddingLeft: '43px',
-              paddingRight: '43px'
-            }}>
-            <h1 style={{ color: 'white', fontWeight: 500, fontSize: '27px', marginBottom: '20px' }}>
-              Module 2: Designing Buttons
-            </h1>
-            <progress className="progress is-small" value="35" max="100" />
-          </div>
+          <LearningModuleHeader progress={35} section={"Lesson 1"} />
 
           <div
             style={{

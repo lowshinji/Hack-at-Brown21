@@ -3,6 +3,33 @@
   background-color: #E3E7F2;
   margin-left: 0px;
   width: 400px;
-  height: 300px;
+  height: 280px;
   padding: 25px;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.horizontal {
+  border: 0.5px solid #BCC1C8;
+  margin-top: 30px;
+}
+
+.midSpace {
+  margin-top: 15px;
+}
+
+.leftSpace {
+  margin-left: 10px;
+}
+
+img.picture {
+  margin-top: -10px;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px
 }

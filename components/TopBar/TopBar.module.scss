@@ -2,21 +2,50 @@
   display: flex; 
   flex-direction: row;
   justify-content: space-between;
-  margin-right: 40px;
+  text-align: center;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+}
+
+.logo_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0023F7;
+  margin-left: 0.5rem;
+}
+
+.logo {
+  margin: 1rem 0rem 0.5rem 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .searchBox {
-  height: 47px;
+  margin-top: 1em;
+  height: 42px;
   width: 548px;
   border-radius: 10px;
   background-color: #F2F4F9;
-  margin-left: 0px;
+  margin: 1.3rem auto 1.3rem 2rem;
 }
 
-img.picture {
-  margin-top: -10px;
-  object-fit: cover;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px
+.image_wrapper {
+  margin: auto 2rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.picture {
+  border-radius: 30px;
+}
+
+.bell_icon {
+  margin-right: 1.5rem;
 }

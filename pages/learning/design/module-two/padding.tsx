@@ -2,30 +2,17 @@ import Link from 'next/link';
 import Layout from '../../../../components/Layout';
 import { useState } from 'react';
 import LearningSideBar from '../../../../components/LearningSidebar';
-// import { GithubPicker } from 'react-color';
+import LearningModuleHeader from '../../../../components/LearningModuleHeader';
 
 const DesignPage: React.FC = () => {
   const [padding, setPadding] = useState('5');
 
   return (
     <Layout title="i2 - Design">
-      <LearningSideBar />
+      <LearningSideBar activeItem="Lesson 2"/>
       <div style={{ marginLeft: '220px' }}>
         <div style={{ margin: '60px' }}>
-          <div
-            style={{
-              backgroundColor: 'black',
-              height: '176px',
-              borderRadius: '20px',
-              paddingTop: '35px',
-              paddingLeft: '43px',
-              paddingRight: '43px'
-            }}>
-            <h1 style={{ color: 'white', fontWeight: 400, fontSize: '27px', marginBottom: '20px' }}>
-              Module 2: Designing Buttons
-            </h1>
-            <progress className="progress is-small" value="60" max="100" />
-          </div>
+          <LearningModuleHeader progress={65} section="Lesson 2" />
           <div
             style={{
               backgroundColor: 'white',
