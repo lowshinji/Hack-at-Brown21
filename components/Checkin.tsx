@@ -12,6 +12,12 @@ type CheckinType = {
   },
 };
 
+const COLORS = [
+  '#FE5244',
+  '#FFCF2D',
+  '#66B0F0',
+]
+
 const formatDate = (date: Date): string => {
   let day: string;
   switch(date.getDate()) {
@@ -61,7 +67,7 @@ const formatDate = (date: Date): string => {
   const time = `${date.getHours()}:${date.getMinutes()}`
   const endDate = new Date(date.getTime() + 3600000);
   const endTime = `${endDate.getHours()}:${endDate.getMinutes()}`;
-  return `${day}, ${month} ${monthDate} at ${time}-${endTime}PM EST`;
+  return `${day}, ${month} ${monthDate} at ${time} - ${endTime}PM EST`;
 }
 
 /*
@@ -69,17 +75,18 @@ const formatDate = (date: Date): string => {
  * @param props 
  */
 const Checkin: React.FC<CheckinType> = ({ date, user }: CheckinType) => {
+  const color = COLORS[Math.floor(Math.random()*COLORS.length)];
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={{borderLeft: `3px solid ${color}`}}>
       <div className={styles.title}>End-of-week Checkin</div>
       <div className={styles.date}>{formatDate(date)}</div>
       <hr className={styles.divider} />
       <span className={styles.profile}>
         <div className={styles.profile}>
-          <Image className={styles.icon} src={'/profile.jpg'} alt="a beautiful human" width={25} height={25} />
+          <Image className={styles.icon} src={'/profile.jpg'} alt="a beautiful human" width={16} height={16} />
           <span className={styles.name}>{user.name}</span>
         </div>
-        <span className={styles.link}><a href="/">View meetup</a></span>
+        <span className={styles.link}><a href="/">Go to Meeting</a></span>
       </span>
     </div>
   );

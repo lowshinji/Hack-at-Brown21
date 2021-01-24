@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import Layout from '../../../../components/Layout';
-import { useState } from 'react';
+// import { useState } from 'react';
 import LearningSideBar from '../../../../components/LearningSidebar';
-import { GithubPicker } from 'react-color';
+// import { GithubPicker } from 'react-color';
 
-const DesignPage = () => {
-  const [paddingBottom, setPaddingBottom] = useState('5');
-  const [paddingTop, setPaddingTop] = useState('5');
-  const [paddingLeft, setPaddingLeft] = useState('5');
-  const [paddingRight, setPaddingRight] = useState('5');
-  const [color, setColor] = useState('white');
-  const [openBackgroundColorPicker, setOpenBackgroundColorPicker] = useState(false);
+const DesignPage: React.FC = () => {
+  // const [paddingBottom, setPaddingBottom] = useState('5');
+  // const [paddingTop, setPaddingTop] = useState('5');
+  // const [paddingLeft, setPaddingLeft] = useState('5');
+  // const [paddingRight, setPaddingRight] = useState('5');
+  // const [color, setColor] = useState('white');
+  // const [openBackgroundColorPicker, setOpenBackgroundColorPicker] = useState(false);
 
   return (
     <Layout title="i2 - Design">
@@ -59,28 +59,28 @@ const DesignPage = () => {
 
             <div className="columns" style={{ marginTop: '10px' }}>
               <div className="column">
-                <button class="button" style={{ marginBottom: '6px' }}>
+                <button className="button" style={{ marginBottom: '6px' }}>
                   Normal
                 </button>
                 <br />
-                <button class="button is-primary">Normal</button>
+                <button className="button is-primary">Normal</button>
               </div>
               <div className="column">
-                <button class="button is-link" style={{ marginBottom: '6px' }}>
+                <button className="button is-link" style={{ marginBottom: '6px' }}>
                   Normal
                 </button>
                 <br />
-                <button class="button is-info">Normal</button>
+                <button className="button is-info">Normal</button>
               </div>
               <div className="column">
-                <button class="button is-success" style={{ marginBottom: '6px' }}>
+                <button className="button is-success" style={{ marginBottom: '6px' }}>
                   Normal
                 </button>
                 <br />
-                <button class="button is-warning">Normal</button>
+                <button className="button is-warning">Normal</button>
               </div>
               <div className="column">
-                <button class="button is-danger">Normal</button>
+                <button className="button is-danger">Normal</button>
               </div>
             </div>
           </div>

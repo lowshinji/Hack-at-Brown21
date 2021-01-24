@@ -2,27 +2,29 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #FFFFFF;
-  border-left: 3px solid #FE5244;
-  padding: 1.5rem 3rem;
-  max-width: 40rem;
+  padding: 1.5rem 2rem;
+  max-width: 25rem;
+  min-width: 20rem;
+  margin-bottom: 1rem;
 }
 
 .title {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 16px;
   font-style: bold;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .date {
   color: #A5A5A5;
   font-weight: 400;
+  font-size: 0.5rem;
 }
 
 .divider {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   background-color: #C4C4C4;
 }
 
@@ -30,7 +32,9 @@
   display: flex;
   align-items:center;
   justify-content: space-between;
+  font-size: 0.7rem;
 }
 
 .icon { border-radius: 100px; }
 .name { margin-left: 0.5rem; }
+.link { font-size: 0.7rem;}

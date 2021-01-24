@@ -12,30 +12,28 @@ import styles from '../styles/dashboard.module.scss';
 const Dashboard: React.FC = () => {
   return (
     <Layout title="i2">
-      <div className={`columns ${styles.page}`}>
+      <div className={styles.page}>
         <SideBar/>
-        <div className='column'>
-          <TopBar/>
-          <div className={styles.widgets}>
-            <div className='columns'>
-              <div className='column'>
-                <WelcomeWidget/>
-                <p className={`${styles.midSpace}`}><b>Progress</b></p>
-                <div className={`${styles.columns} ${styles.smallSpace}`}>
-                  <div className={styles.column}>
-                    <LearningWidget/>
-                  </div>
-                  <div>
-                    <ActivityWidget/>
-                    <UpcomingWidget/>
-                  </div>
+        <TopBar/>
+        <div className={styles.widgets}>
+          <div className='columns'>
+            <div className='column'>
+              <WelcomeWidget/>
+              <p className={`${styles.midSpace}`}><b>Progress</b></p>
+              <div className={`${styles.columns} ${styles.smallSpace}`}>
+                <div className={styles.column}>
+                  <LearningWidget/>
                 </div>
-                
+                <div>
+                  <ActivityWidget/>
+                  <UpcomingWidget/>
+                </div>
+                </div>
               </div>
-              <div className='column'>
-                <DescriptionWidget/>
-                <MeetingWidget />
-              </div>
+            </div>
+            <div className='column'>
+              <DescriptionWidget/>
+              <MeetingWidget />
             </div>
           </div>
         </div>

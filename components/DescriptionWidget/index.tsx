@@ -11,7 +11,6 @@ const DescriptionWidget: React.FC = () => {
         <img className={styles.picture} src='/profile.jpg' alt="profile"></img>
         <p className={styles.leftSpace}><b>Mentor:</b> Jason Michaels</p>
       </div>
-      
     </div>
   )
 }
