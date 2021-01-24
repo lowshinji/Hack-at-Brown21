@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Layout from '../../../../components/Layout';
-import { useState } from 'react';
 import LearningSideBar from '../../../../components/LearningSidebar';
 import LearningModuleHeader from '../../../../components/LearningModuleHeader';
+import TryItYourself from '../../../../components/LearningTryYourself/Lesson2';
 
 const DesignPage: React.FC = () => {
-  const [padding, setPadding] = useState('5');
-
   return (
     <Layout title="i2 - Design">
       <LearningSideBar activeItem="Lesson 2"/>
@@ -40,43 +38,7 @@ const DesignPage: React.FC = () => {
             <p style={{ color: '#2f2f2f' }}>
               Using the sliders below, try out different padding styles.
             </p>
-
-            <div
-              style={{
-                backgroundColor: '#F2F4F9',
-                borderRadius: '20px',
-                paddingTop: '35px',
-                paddingLeft: '43px',
-                paddingRight: '43px',
-                paddingBottom: '25px',
-                marginTop: '30px'
-              }}
-              className="columns">
-              <div className="column">
-                <div style={{ margin: 'auto', paddingTop: '20px' }}>
-                  <button
-                    style={{
-                      padding: `${padding}px`,
-                      width: '150px',
-                      height: '80px',
-                      borderRadius: '10px',
-                      fontSize: '20px',
-                      fontWeight: 500
-                    }}>
-                    Button
-                  </button>
-                </div>
-              </div>
-              <div className="column">
-                <input
-                  type="range"
-                  min="1"
-                  max="100"
-                  value={padding}
-                  onChange={(e) => setPadding(e.target.value)}
-                />
-                {padding}
-              </div>
+            <TryItYourself />
             </div>
           </div>
           <Link href="/learning/design/module-two/padding">
@@ -98,7 +60,6 @@ const DesignPage: React.FC = () => {
             </button>
           </Link>
         </div>
-      </div>
     </Layout>
   );
 };
