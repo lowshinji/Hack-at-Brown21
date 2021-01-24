@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import * as React from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { 
@@ -60,6 +61,7 @@ function registerPeerConnectionListeners(peerConnection: RTCPeerConnection): RTC
  */
 const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapperType) => {
   const [inCall, setInCall] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [roomExists, setRoomExists] = useState(false);
 
   const localStreamRef = useRef<MediaStream | null>(null);
@@ -129,6 +131,8 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
     roomIdRef.current = roomRef.id;
     console.log(`New room created with SDP offer. Room ID: ${roomRef.id}`);
     console.log(`Current room is ${roomRef.id} - You are the caller!`);
+    setLoading(false);
+    setInCall(true);
 
     peerConnectionRef.current.addEventListener('track', event => {
       console.log('Got remote track:', event.streams[0]);
@@ -160,13 +164,13 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
           const data = change.doc.data();
           console.log(`Got new remote ICE candidate: ${JSON.stringify(data)}`);
           await peerConnectionRef.current.addIceCandidate(new RTCIceCandidate(data));
-          setInCall(true);
         }
       });
     });
   }
 
   const joinRoom = async (): Promise<void> => {
+    setLoading(true);
     const roomRef = await getRoomInfo();
     const roomSnapshot = await roomRef.get();
     if (roomSnapshot != null && roomSnapshot.exists) {
@@ -226,6 +230,7 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
             setInCall(true);
           }
         });
+        setLoading(false);
       });
     } else {
       startCall();
@@ -246,6 +251,13 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
     location.reload();
   }
 
+  const LoadingState = () => (
+    <div className={style.loading}>
+      <Image src="/loading.svg" alt="loading indicator" width={40} height={40}/>
+      <div>Loading...</div>
+    </div>
+  )
+
   return (
     <>
       <div className={`column ${className}`}>
@@ -255,6 +267,7 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
         <div className={style.video_wrapper}>
           <video className={style.video} ref={remoteVideoRef} autoPlay playsInline/>
         </div>
+        {loading && <LoadingState />}
       </div>
       <div className={style.video_controls}>
         {!inCall

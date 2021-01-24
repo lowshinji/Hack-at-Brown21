@@ -10,11 +10,11 @@
 
 .video_wrapper {
   border-radius: 20px;
-  width:100%;
+  width: 90%;
   height: 35vh;
   text-align:center;
   background-color: #E3E7F2;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
 }
 
 .video {
@@ -27,4 +27,12 @@
 
 .video_controls {
   text-align: center;
+}
+
+.loading {
+  position: absolute;
+  text-align: center;
+  bottom: 25%;
+  left: 40%;
+  right: 50%;
 }
