@@ -1,17 +1,61 @@
+import Image from 'next/image';
+import { useState } from 'react';
 import styles from './DashboardSideBar.module.scss';
 
-const DashboardSideBar: React.FC = () => {
+type DashboardSideBarProps = {
+  activeItem?: "Home" | "Progress" | "Learning" | "Meetings";
+}
+
+const DashboardSideBar: React.FC<DashboardSideBarProps> = ({activeItem = 'Home'}) => {
+  const [houseIconActive, setHouseIconActive] = useState(activeItem === 'Home');
+  const [graphIconActive, setGraphIconActive] = useState(activeItem === 'Progress');
+  const [lightIconActive, setLightIconActive] = useState(activeItem === 'Learning');
+  const [phoneIconActive, setPhoneIconActive] = useState(activeItem === 'Meetings');
+
+
   return(
-    <div className={`column is-2 ${styles.wrapper}`}>
-      <div className='columns'>
+    <div className={styles.wrapper}>
+      <div className={`columns ${styles.logo}`}>
         <div id={styles.circle}/>
         <h2 className={styles.name}>i2</h2>
       </div>
       <div className={styles.middleWidget}>
-        <p className={styles.menuItem}><a href='/' className={styles.link}>Home</a></p>
-        <p className={styles.menuItem}><a href='/progress' className={styles.link}>Progress</a></p>
-        <p className={styles.menuItem}><a href='/learning' className={styles.link}>Learning</a></p>
-        <p className={styles.menuItem}><a href='/meetings' className={styles.link}>Meetings</a></p>
+        <div 
+          className={`${styles.menuItem} ${houseIconActive ? styles.activeMenuItem : ''}`}
+          onMouseOver={() => setHouseIconActive(true)} 
+          onMouseLeave={() => setHouseIconActive(false)}>
+          <span className={styles.menuIconWrapper}>
+            <Image src={houseIconActive ? '/house_icon_hover.svg' : '/house_icon.svg'} alt="house icon" width={16} height={16} />  
+          </span>
+          <a href='/dashboard' className={styles.link}>Home</a>
+        </div>
+        <div 
+          className={`${styles.menuItem} ${graphIconActive ? styles.activeMenuItem : ''}`}
+          onMouseOver={() => setGraphIconActive(true)} 
+          onMouseLeave={() => setGraphIconActive(false)}>
+          <span className={styles.menuIconWrapper}>
+            <Image src={graphIconActive ? '/graph_icon_hover.svg' : '/graph_icon.svg'} alt="graph icon" width={16} height={16} />  
+          </span>
+          <a href='/progress' className={styles.link}>Progress</a>
+        </div>
+        <div 
+          className={`${styles.menuItem} ${lightIconActive ? styles.activeMenuItem : ''}`}
+          onMouseOver={() => setLightIconActive(true)} 
+          onMouseLeave={() => setLightIconActive(false)}>
+          <span className={styles.menuIconWrapper}>
+            <Image src={lightIconActive ? '/lightbulb_icon_hover.svg' : '/lightbulb_icon.svg'} alt="lightbulb icon" width={16} height={16} />  
+          </span>
+          <a href='/learning' className={styles.link}>Learning</a>
+        </div>
+        <div 
+          className={`${styles.menuItem} ${phoneIconActive ? styles.activeMenuItem : ''}`}
+          onMouseOver={() => setPhoneIconActive(true)} 
+          onMouseLeave={() => setPhoneIconActive(false)}>
+          <span className={styles.menuIconWrapper}>
+            <Image src={phoneIconActive ? '/phone_icon_hover.svg' : '/phone_icon.svg'} alt="phone icon" width={16} height={16} />  
+          </span>
+          <a href='/meetings' className={styles.link}>Meetings</a>
+        </div>
       </div>
 
       <div className={styles.bottomWidget}>

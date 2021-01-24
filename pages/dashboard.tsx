@@ -10,7 +10,7 @@ import styles from '../styles/dashboard.module.scss';
 const Dashboard: React.FC = () => {
   return (
     <Layout title="i2">
-      <div className={`columns ${styles.page}`}>
+      <div className={styles.page}>
         <SideBar/>
         <div className='column'>
           <TopBar/>

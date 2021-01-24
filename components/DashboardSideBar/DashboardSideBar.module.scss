@@ -1,7 +1,8 @@
 .wrapper {
   background-color: #fff;
-  padding-top: 60px; /* Place content 60px from the top */
-  padding-left: 60px;
+  width: 10rem;
+  min-height: 100%;
+  float: left;
 }
 
 .middleWidget {
@@ -17,6 +18,10 @@
   font-weight: bold;
 }
 
+.logo {
+  margin: 2rem 2rem;
+}
+
 #circle {
   width: 47px;
   height: 47px;
@@ -28,7 +33,16 @@
 }
 
 .menuItem {
+  width: 100%;
+  padding-left: 1rem;
   margin-bottom: 40px;
+}
+
+.menuIconWrapper {
+  margin-right: 0.5rem;
+}
+.menuIcon {
+  color: black;
 }
 
 .link{
@@ -38,4 +52,12 @@
 
 a.link:hover {
   color: #0023F7;
+}
+
+.activeMenuItem {
+  border-right: 2px solid #0023F7;
+}
+.activeMenuItem .link,
+.activeMenuItem .menuIcon {
+  color: #0023F7 !important;
 }
