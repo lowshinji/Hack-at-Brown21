@@ -2,10 +2,15 @@ import Link from 'next/link';
 import Layout from '../../../../components/Layout';
 import { useState } from 'react';
 import LearningSideBar from '../../../../components/LearningSidebar';
-import { GithubPicker } from 'react-color';
+import { CompactPicker } from 'react-color';
 
-const DesignPage = () => {
-  const [padding, setPadding] = useState('5');
+const DesignPage: React.FC = () => {
+  // const [paddingBottom, setPaddingBottom] = useState('5');
+  // const [paddingTop, setPaddingTop] = useState('5');
+  // const [paddingLeft, setPaddingLeft] = useState('5');
+  // const [paddingRight, setPaddingRight] = useState('5');
+  const [color, setColor] = useState('white');
+  const [backgroundColor, setBackgroundColor] = useState('#404380');
 
   return (
     <Layout title="i2 - Design">
@@ -21,11 +26,12 @@ const DesignPage = () => {
               paddingLeft: '43px',
               paddingRight: '43px'
             }}>
-            <h1 style={{ color: 'white', fontWeight: 400, fontSize: '27px', marginBottom: '20px' }}>
+            <h1 style={{ color: 'white', fontWeight: 500, fontSize: '27px', marginBottom: '20px' }}>
               Module 2: Designing Buttons
             </h1>
-            <progress className="progress is-small" value="60" max="100" />
+            <progress className="progress is-small" value="35" max="100" />
           </div>
+
           <div
             style={{
               backgroundColor: 'white',
@@ -36,22 +42,26 @@ const DesignPage = () => {
               paddingBottom: '25px',
               marginTop: '30px'
             }}>
-            <h2 style={{ fontWeight: 500, fontSize: '19px' }}>Button Padding</h2>
+            <h2 style={{ fontWeight: 500, fontSize: '19px' }}>Color States</h2>
             <br />
             <p style={{ color: '#2f2f2f' }}>
-              The sizing of your button plays a big role in the accessibility of your interface.
-              Most inexperienced designers will say something like, “Buttons should have a height of
-              36 pixels”. This isn’t the best approach — especially if you are designing for web.
-              You should always take the line hight of the font you are using and add a unit to it.
-              For example: “My button’s label has a line height of 20px and vertical padding of
-              8px”.
+              In order to design the right interactions, we need to look back at the history and
+              origins of physical pushbuttons, a direct predecessor of the UI component so heavily
+              used in all digital products today. Buttons are amazing. The touch of a finger setting
+              an appliance, a car, or a system in motion, even if the user doesn’t understand the
+              underlying mechanisms or algorithms. In Power Button, Rachel Plotnick traces the
+              origins of today’s push-button culture and describes the ways that button-pushing
+              became a means for digital command, which promised effortless, discreet and fool-proof
+              control.
             </p>
+
             <h2 style={{ fontWeight: 500, fontSize: '19px', marginTop: '30px' }}>
               Try It Yourself
             </h2>
             <br />
             <p style={{ color: '#2f2f2f' }}>
-              Using the sliders below, try out different padding styles.
+              Using the colour pickers below, change the colour of the button’s background and the
+              label to achieve optimal contrast.
             </p>
 
             <div
@@ -66,13 +76,15 @@ const DesignPage = () => {
               }}
               className="columns">
               <div className="column">
-                <div style={{ margin: 'auto', paddingTop: '20px' }}>
+                <div style={{ margin: 'auto', paddingTop: '50px' }}>
                   <button
                     style={{
-                      padding: `${padding}px`,
+                      color,
+                      backgroundColor,
                       width: '150px',
                       height: '80px',
                       borderRadius: '10px',
+                      border: backgroundColor,
                       fontSize: '20px',
                       fontWeight: 500
                     }}>
@@ -81,17 +93,23 @@ const DesignPage = () => {
                 </div>
               </div>
               <div className="column">
-                <input
-                  type="range"
-                  min="1"
-                  max="100"
-                  value={padding}
-                  onChange={(e) => setPadding(e.target.value)}
+                <CompactPicker
+                  color={color}
+                  onChangeComplete={(color) => {
+                    setColor(color.hex);
+                  }}
                 />
-                {padding}
+                <div style={{ marginTop: '10px' }} />
+                <CompactPicker
+                  color={backgroundColor}
+                  onChangeComplete={(color) => {
+                    setBackgroundColor(color.hex);
+                  }}
+                />
               </div>
             </div>
           </div>
+          <br />
           <Link href="/learning/design/module-two/padding">
             <button
               style={{
