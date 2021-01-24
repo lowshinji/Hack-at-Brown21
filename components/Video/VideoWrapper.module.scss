@@ -1,0 +1,30 @@
+.button {
+  background: #000000;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  margin: auto;
+}
+
+.video_wrapper {
+  border-radius: 20px;
+  width:100%;
+  height: 35vh;
+  text-align:center;
+  background-color: #E3E7F2;
+  margin-bottom: 1rem;
+}
+
+.video {
+  border-radius: 20px;
+  width:100%;
+  height:100%;
+  margin:auto;
+  object-fit: none;
+}
+
+.video_controls {
+  text-align: center;
+}

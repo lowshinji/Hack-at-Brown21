@@ -12,6 +12,12 @@ type CheckinType = {
   },
 };
 
+const COLORS = [
+  '#FE5244',
+  '#FFCF2D',
+  '#66B0F0',
+]
+
 const formatDate = (date: Date): string => {
   let day: string;
   switch(date.getDate()) {
@@ -69,8 +75,9 @@ const formatDate = (date: Date): string => {
  * @param props 
  */
 const Checkin: React.FC<CheckinType> = ({ date, user }: CheckinType) => {
+  const color = COLORS[Math.floor(Math.random()*COLORS.length)];
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={{borderLeft: `3px solid ${color}`}}>
       <div className={styles.title}>End-of-week Checkin</div>
       <div className={styles.date}>{formatDate(date)}</div>
       <hr className={styles.divider} />

@@ -2,7 +2,7 @@ import styles from './DashboardSideBar.module.scss';
 
 const DashboardSideBar: React.FC = () => {
   return(
-    <div className={`column is-2`}>
+    <div className={`column is-2 ${styles.wrapper}`}>
       <div className='columns'>
         <div id={styles.circle}/>
         <h2 className={styles.name}>i2</h2>

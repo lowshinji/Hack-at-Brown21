@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { useEffect, useRef, useState } from 'react';
-import './VideoWrapper.module.css'
 import { 
   getDocument,
   createDocument,
   deleteDocument,
 } from '../../utils/firebase';
+import style from './VideoWrapper.module.scss';
 
 type RangeType = {
   min: number;
@@ -237,20 +237,24 @@ const VideoWrapper: React.FC<VideoWrapperType> = ({ className = '' }: VideoWrapp
 
   return (
     <>
-      <div className={`video-wrapper ${className}`}>
-        <video ref={localVideoRef} muted autoPlay playsInline/>
-        <video ref={remoteVideoRef} autoPlay playsInline/>
+      <div className={`column ${className}`}>
+        <div className={style.video_wrapper}>
+          <video className={style.video} ref={localVideoRef} muted autoPlay playsInline/>
+        </div>
+        <div className={style.video_wrapper}>
+          <video className={style.video} ref={remoteVideoRef} autoPlay playsInline/>
+        </div>
       </div>
-      <div className='video-controls'>
+      <div className={style.video_controls}>
         {inCall
-        ? <button onClick={hangUp}>
-            <span>End</span>
+        ? <button className={style.button} onClick={hangUp}>
+            <span>Hang Up</span>
           </button> 
-        : <button onClick={startCall}>
+        : <button  className={style.button} onClick={startCall}>
             <span>Call</span>
           </button>
         }
-        <button onClick={joinRoom}>
+        <button  className={style.button} onClick={joinRoom}>
           <span>Join</span>
         </button>
       </div>
