@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ children, title = 'This is the default title'
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			<link rel="stylesheet" href="https://use.typekit.net/htq3msi.css" />
     </Head>
-    <header>
+    {/* <header>
       <nav>
         <Link href="/">
           <a>Home</a>
@@ -30,12 +30,12 @@ const Layout: React.FC<Props> = ({ children, title = 'This is the default title'
         </Link>{' '}
         | <a href="/api/users">Users API</a>
       </nav>
-    </header>
+    </header> */}
     {children}
-    <footer>
+    {/* <footer>
       <hr />
       <span>I&apos;m here to stay (Footer)</span>
-    </footer>
+    </footer> */}
   </div>
 );
 

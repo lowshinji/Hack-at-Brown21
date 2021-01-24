@@ -11,7 +11,9 @@
   "dependencies": {
     "@react-firebase/firestore": "^0.5.5",
     "firebase": "^8.2.4",
+    "bulma": "^0.9.1",
     "next": "latest",
+    "node-sass": "^5.0.0",
     "react": "^16.12.0",
     "react-color": "^2.19.3",
     "react-dom": "^16.12.0"
