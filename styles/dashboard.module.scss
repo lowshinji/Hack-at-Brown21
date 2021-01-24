@@ -33,7 +33,7 @@
 
 .topbar {
   float: right;
-  height: 350px;
+  // height: 150px;
 }
 
 .searchBox {
@@ -46,7 +46,9 @@
 
 .widgets {
   margin-top: 100px;
-  margin-right: 100px;
+  margin-right: 0px;
+  padding-top: 20px;
+  padding-left: 20px;
   background-color: #F2F4F9;
   height: 100%;
 }
@@ -62,4 +64,39 @@
 
 .whiteBackground {
   background-color: white;
+}
+
+.welcomeWidget {
+  height: 200px;
+  width: 600px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.bigText {
+  font-size: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+.smallText {
+  font-size: 18px;
+}
+
+.midSpace {
+  margin-top: 30px;
+}
+
+.smallSpace {
+  margin-top: 15px;
+}
+
+.button {
+  width: 135px;
+  height: 40px;
+}
+
+.alignLeft {
+  margin-left: 0px;
 }
