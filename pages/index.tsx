@@ -1,46 +1,33 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import Layout from '../components/Layout';
 import styles from '../styles/index.module.scss';
 
 const IndexPage: React.FC = () => {
   return (
     <Layout title="i2">
-    <div className='columns'>
-      <div className={`${styles.left} column is-one-quarter`}>
-        <div className={styles.leftView}>
-          <p className={styles.leftViewInterior}>
-            <p className={styles.leftTitle}>Intern Sign Up</p>
-            <p className={styles.description}>Create an intern account and join your coworkers on i2!</p>
-          </p>
+    <div className={styles.welcomeRoot}>
+      <div className={styles.logo_wrapper}>
+        <div className={`${styles.logo}`}>
+          <Image src="/logo_white.svg" alt="logo i2" width={32} height={32} />
+          <span className={styles.name}>Imagine Intern.</span>
         </div>
       </div>
-      <div className={`${styles.right} column`}>
-        <div className={styles.rightView}>
-          <div className='columns'>
-            <div id={styles.circle}/>
-            <h2 className={styles.rightTitle}>Welcome to i2</h2>
-          </div>
-          <div>
-            <label className="label">Full name</label>
-            <div className={`${styles.formInput} control`}>
-              <input className={`${styles.inputBox} input`} type="text" placeholder="Start typing"/>
-            </div>
-            <label className="label">Email address</label>
-            <div className={`${styles.formInput} control`}>
-              <input className={`${styles.inputBox} input`} type="text" placeholder="Start typing"/>
-            </div>
-            <label className="label">Password</label>
-            <div className={`${styles.formInput} control`}>
-              <input className={`${styles.inputBox} input`} type="text" placeholder="Start typing"/>
-            </div>
-            <label className="label">Company</label>
-            <div className={`${styles.formInput} control`}>
-              <input className={`${styles.inputBox} input`} type="text" placeholder="Start typing"/>
-            </div>
-          </div>
-          <div className={`columns ${styles.bottom}`}>
-            <p className={styles.signIn}>Already have an account? <b>Sign In</b></p>
-            <a className={`button is-black ${styles.button}`} href="/dashboard">Sign up</a>
-          </div>
+      <div className={styles.welcomeWrapper}>
+        <div className={styles.welcomeImage}>
+          <Image src="/welcome.png" alt="a beautiful strong woman doin' work" width={615} height={606}/>
+        </div>
+        <div className={styles.welcomeRightText}>
+          <h1 className={styles.welcomeHeader}>Imagine the internship of your dreams.</h1>
+          <p>i2 is a platform that creates and manages meaningful internship experiences. It aims to bridge the gap between companies and their interns through mentorship. Whether you’re an intern or a company co-founder looking to provide guidance, i2 can help!</p>
+          <span className={styles.welcomeButtonGroup}>
+            <button className={styles.buttonIntern}>
+              <Link href="/signup-intern">I&apos;m an intern</Link>
+            </button>
+            <button className={styles.buttonFounder}>
+              <Link href="/signup-founder">I&apos;m a co-founder</Link>
+            </button>
+          </span>
         </div>
       </div>
     </div>
