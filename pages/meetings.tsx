@@ -6,11 +6,11 @@ import SideBar from '../components/DashboardSideBar/index';
 import styles from '../styles/meeting.module.scss';
 
 const MeetingPage: React.FC = () => (
-  <Layout title="About | Next.js + TypeScript Example">
-    <div className={styles.page_wrapper}>
-      <TopBar />
-      <SideBar activeItem='Meetings'/>
+  <Layout title="i2 | Meeting">
+    <TopBar />
+    <SideBar activeItem='Meetings'/>
 
+    <div className={styles.page_wrapper}>
       <div className={`columns ${styles.wrapper}`}>
         <div className={`column ${styles.video_column}`}>
           <Video />

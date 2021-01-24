@@ -41,7 +41,7 @@ const DesignPage: React.FC = () => {
             <TryItYourself />
             </div>
           </div>
-          <Link href="/learning/design/module-two/padding">
+          <Link href="/learning/design/module-two/typography">
             <button
               style={{
                 float: 'right',

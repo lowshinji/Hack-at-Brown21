@@ -46,7 +46,7 @@ const LearningSideBar: React.FC<LearningSideBarProps> = ({activeItem = ''}) => {
 
       <div className={styles.bottomWidget}>
         <p className={styles.menuItem} style={{ color: '#5A626A' }}>
-          <a href="/settings" className={styles.link}>
+          <a className={styles.link}>
             Exit Module
           </a>
         </p>

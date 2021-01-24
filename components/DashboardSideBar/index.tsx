@@ -14,7 +14,7 @@ const DashboardSideBar: React.FC<DashboardSideBarProps> = ({activeItem = 'Home'}
 
 
   return(
-    <div className={'column ' + styles.wrapper}>
+    <div className={styles.wrapper}>
       <div className={styles.middleWidget}>
         <div 
           className={`${styles.menuItem} ${houseIconActive ? styles.activeMenuItem : ''}`}
@@ -32,7 +32,7 @@ const DashboardSideBar: React.FC<DashboardSideBarProps> = ({activeItem = 'Home'}
           <span className={styles.menuIconWrapper}>
             <Image src={graphIconActive ? '/graph_icon_hover.svg' : '/graph_icon.svg'} alt="graph icon" width={16} height={16} />  
           </span>
-          <a href='/progress' className={styles.link}>Progress</a>
+          <a className={styles.link}>Progress</a>
         </div>
         <div 
           className={`${styles.menuItem} ${lightIconActive ? styles.activeMenuItem : ''}`}
@@ -55,7 +55,7 @@ const DashboardSideBar: React.FC<DashboardSideBarProps> = ({activeItem = 'Home'}
       </div>
 
       <div className={styles.bottomWidget}>
-        <p className={styles.menuItem}><a href='/settings' className={styles.link}>Settings</a></p>
+        <p className={styles.menuItem}><a className={styles.link}>Settings</a></p>
         <p className={styles.menuItem}><a className={styles.link}>Log Out</a></p>
       </div>
     </div>

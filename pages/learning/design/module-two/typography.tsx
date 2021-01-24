@@ -39,7 +39,7 @@ const TypographyPage: React.FC = () => {
             <LearningTryYourself />
           </div>
           <br />
-          <Link href="/learning/design/module-two/padding">
+          <Link href="/learning/">
             <button
               style={{
                 float: 'right',
