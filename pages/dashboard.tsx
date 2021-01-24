@@ -12,39 +12,28 @@ const Dashboard: React.FC = () => {
     <Layout title="i2">
       <div className={styles.page}>
         <SideBar/>
-        <div className='column'>
-          <TopBar/>
-          {/* <div className={`${styles.topbar}`}>
-            <div>
-              <input className={`${styles.searchBox} input`} type="text" placeholder="Search dashboard"/>
-            </div>
-            <div>
-              <img className={styles.picture} src='/profile.jpg' alt="profile"></img>
-            </div>
-          </div> */}
-
-          <div className={styles.widgets}>
-            <div className='columns'>
-              <div className='column'>
-                <WelcomeWidget/>
-                <p className={`${styles.midSpace}`}><b>Progress</b></p>
-                <div className={`columns ${styles.smallSpace} ${styles.alignLeft}`}>
-                  <LearningWidget/>
-                  <div className='column'>
-                    <div className={`${styles.widget} ${styles.whiteBackground}`}>
-                    
-                    </div>
-                    <div className={`${styles.widget} ${styles.whiteBackground}`}>
-                    
-                    </div>
+        <TopBar/>
+        <div className={styles.widgets}>
+          <div className='columns'>
+            <div className='column'>
+              <WelcomeWidget/>
+              <p className={`${styles.midSpace}`}><b>Progress</b></p>
+              <div className={`columns ${styles.smallSpace} ${styles.alignLeft}`}>
+                <LearningWidget/>
+                <div className='column'>
+                  <div className={`${styles.widget} ${styles.whiteBackground}`}>
+                  
+                  </div>
+                  <div className={`${styles.widget} ${styles.whiteBackground}`}>
+                  
                   </div>
                 </div>
-                
               </div>
-              <div className='column'>
-                <DescriptionWidget/>
-                <MeetingWidget />
-              </div>
+              
+            </div>
+            <div className='column'>
+              <DescriptionWidget/>
+              <MeetingWidget />
             </div>
           </div>
         </div>
