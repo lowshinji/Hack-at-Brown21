@@ -1,4 +1,4 @@
-# I3 - Intern Help Thing
+# i2 - Imagine Intern
 
 This is our submission for Hack@Brown 2021. 
 
