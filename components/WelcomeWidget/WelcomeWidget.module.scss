@@ -2,8 +2,10 @@
   border-radius: 15px;
   background-color: black;
   color: white;
-  height: 200px;
-  max-width: 40rem;
+  height: 245px;
+  // height: 33vh;
+  width: 100%;
+  // max-width: 40rem;
   min-width: 10rem;
   padding-top: 30px;
   padding-left: 30px;
@@ -24,4 +26,20 @@
 .button {
   width: 135px;
   height: 40px;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.picture {
+  // width: 300px;
+  // height: 250px;
+  width: 25rem;
+  height: 16rem;
+  // object-fit: cover;
+  margin-bottom: 0px;
+  // margin-right: 5px;
 }

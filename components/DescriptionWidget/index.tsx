@@ -8,7 +8,7 @@ const DescriptionWidget: React.FC = () => {
       <hr className={styles.horizontal}/>
 
       <div className={styles.columns}>
-        <img className={styles.picture} src='/profile.jpg' alt="profile"></img>
+        <img className={styles.picture} src='/mentor.jpg' alt="profile"></img>
         <p className={styles.leftSpace}><b>Mentor:</b> Jason Michaels</p>
       </div>
     </div>

@@ -45,7 +45,7 @@ const DashboardSideBar: React.FC = () => {
         </div>
         <div className={styles.moduleDescriptor}>
           <p><b>Module 3</b></p>
-          <p>Learn how to make a design system</p>
+          <p>Learn how to prototype your design on Figma</p>
         </div>
       </div>
     </div>

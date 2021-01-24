@@ -15,8 +15,8 @@ const Dashboard: React.FC = () => {
       <TopBar/>
       <SideBar/>
       <div className={`${styles.widgets} columns`}>
-        <div className='columns'>
-          <div className='column'>
+        <div className={styles.left}>
+          <div>
             <WelcomeWidget/>
             <p className={`${styles.midSpace}`}><b>Progress</b></p>
             <div className={`${styles.columns} ${styles.smallSpace}`}>
@@ -30,7 +30,7 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className='column'>
+        <div className={styles.left}>
           <DescriptionWidget/>
           <MeetingWidget />
         </div>
