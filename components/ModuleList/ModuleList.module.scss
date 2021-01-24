@@ -1,0 +1,49 @@
+.widget {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.labels {
+  color: blue;
+  padding: 10px;
+  background-color: #F2F4F9;
+  border-radius: 10px;
+}
+
+.rowEntry {
+  padding: 10px;
+  border-bottom: 0.5px solid #C4C4C4;
+}
+
+.col1 {
+  width: 10%;
+  margin-left: 2%;
+}
+
+.col2 {
+  width: 34%;
+  margin-left: 2%;
+}
+
+.col3 {
+  width: 15%;
+  margin-left: 2%;
+}
+
+.col4 {
+  width: 15%;
+  margin-left: 2%;
+}
+
+.col5 {
+  width: 18%;
+  margin-left: 2%;
+  margin-right: 2%;
+}

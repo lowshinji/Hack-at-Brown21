@@ -1,0 +1,26 @@
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.upperBox {
+  margin-top: 40px;
+  margin-left: 50px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.bigSpace {
+  margin-top: 60px;
+}
+
+.picture {
+  width: 500px;
+  height: 250px;
+  border-radius: 30px;
+  margin-bottom: -14px;
+  object-fit: cover;
+}

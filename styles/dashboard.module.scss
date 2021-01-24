@@ -1,3 +1,13 @@
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column{
+  width: 97%;
+  padding-right: 3%;
+
 .name {
   font-size: 30px;
   font-weight: bold;
@@ -33,7 +43,6 @@
   padding-left: 20px;
   background-color: #F2F4F9;
 }
-
 .widget {
   border-radius: 15px;
 }
@@ -46,14 +55,11 @@
 .whiteBackground {
   background-color: white;
 }
-
+  
 .bigText {
   font-size: 25px;
 }
 
-.bold {
-  font-weight: bold;
-}
 .smallText {
   font-size: 18px;
 }
@@ -69,17 +75,4 @@
 .button {
   width: 135px;
   height: 40px;
-}
-
-.alignLeft {
-  margin-left: 0px;
-}
-
-
-img.picture {
-  margin-top: -10px;
-  object-fit: cover;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px
 }
