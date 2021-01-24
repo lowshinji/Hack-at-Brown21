@@ -1,0 +1,35 @@
+.middleWidget {
+  margin-top: 100px;
+}
+
+.bottomWidget {
+  margin-top: 200px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#circle {
+  width: 47px;
+  height: 47px;
+  -webkit-border-radius: 23.5px;
+  -moz-border-radius: 23.5px;
+  border-radius: 23.5px;
+  background: #C4C4C4;
+  margin-right: 10px;
+}
+
+.menuItem {
+  margin-bottom: 40px;
+}
+
+.link{
+  font-size: 19px;
+  color: black;
+}
+
+a.link:hover {
+  color: #0023F7;
+}
