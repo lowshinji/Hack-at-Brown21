@@ -9,7 +9,7 @@ const IndexPage: React.FC = () => {
         <div className={styles.leftView}>
           <p className={styles.leftViewInterior}>
             <p className={styles.leftTitle}>Sign up</p>
-            <p className={styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+            <p className={styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text.</p>
           </p>
         </div>
       </div>

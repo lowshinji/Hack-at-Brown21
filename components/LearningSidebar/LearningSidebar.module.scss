@@ -1,0 +1,49 @@
+.middleWidget {
+  margin-top: 100px;
+}
+
+.bottomWidget {
+  margin-top: 200px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#circle {
+  width: 47px;
+  height: 47px;
+  -webkit-border-radius: 23.5px;
+  -moz-border-radius: 23.5px;
+  border-radius: 23.5px;
+  background: #c4c4c4;
+  margin-right: 10px;
+}
+
+.menuItem {
+  margin-bottom: 40px;
+}
+
+.link {
+  font-size: 19px;
+  color: black;
+}
+
+a.link:hover {
+  color: #0023f7;
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 220px;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: white; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  padding-left: 60px;
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
