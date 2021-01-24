@@ -4,16 +4,80 @@
   clear: both;
 }
 
-.column {
-  float: left;
-  padding: 10px;
-  height: 300px;
-}
-
 .left {
-  width: 25%;
+  height: 780px;
 }
 
-.right {
-  width: 75%;
+.leftView {
+  background-color: black;
+  color: white;
+  height: 100%;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-top: 24px;
+}
+
+.rightView {
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+
+.leftViewInterior {
+  padding-top: 150px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.leftTitle {
+  font-size: 35px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.rightTitle {
+  font-size: 35px;
+  margin-bottom: 80px;
+  font-weight: bold;
+}
+
+.formInput {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.inputBox {
+  height: 70px;
+  background-color: #F2F4F9;
+  border-radius: 10px;
+}
+
+#circle {
+  width: 47px;
+  height: 47px;
+  -webkit-border-radius: 23.5px;
+  -moz-border-radius: 23.5px;
+  border-radius: 23.5px;
+  background: #C4C4C4;
+  margin-right: 10px;
+}
+
+.signIn {
+  font-size: 12px;
+  margin-top: 30px;
+  /* margin-left: 507px; */
+  margin-right: 12px;
+}
+
+.button {
+  border-radius: 10px;
+  width: 176px;
+  height: 57px;
+}
+
+.bottom {
+  margin-top: 40px;
+  margin-right: 0px;
+  float: right;
 }

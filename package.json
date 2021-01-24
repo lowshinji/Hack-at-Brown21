@@ -9,7 +9,9 @@
     "lint": "eslint --ext js,jsx,ts,tsx --fix"
   },
   "dependencies": {
+    "bulma": "^0.9.1",
     "next": "latest",
+    "node-sass": "^5.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

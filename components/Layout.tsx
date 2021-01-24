@@ -31,10 +31,10 @@ const Layout: React.FC<Props> = ({ children, title = 'This is the default title'
       </nav>
     </header> */}
     {children}
-    <footer>
+    {/* <footer>
       <hr />
       <span>I&apos;m here to stay (Footer)</span>
-    </footer>
+    </footer> */}
   </div>
 );
 
