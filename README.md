@@ -2,6 +2,9 @@
 
 This is our submission for Hack@Brown 2021. 
 
+An app for helping interns improve their skills, and start-ups to make the most
+of their interns!
+
 Built by: Shin-Ji, Naoki, Kate, and Dylan!
 
 ## Deploy your own
