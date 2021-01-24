@@ -4,5 +4,28 @@
   margin-left: 0px;
   width: 400px;
   height: 300px;
-  padding: 25px;
+  padding: 0;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 16px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content:space-between;
+  margin: 1rem 0;
+}
+
+.button {
+  background: #0023F7;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  color: white;
+  margin-left: 0.85rem;
 }

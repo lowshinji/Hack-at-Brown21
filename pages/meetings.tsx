@@ -7,8 +7,8 @@ import styles from '../styles/meeting.module.scss';
 
 const MeetingPage: React.FC = () => (
   <Layout title="About | Next.js + TypeScript Example">
-    <SideBar activeItem='Meetings'/>
-    <div className='column'>
+    <div className={styles.page_wrapper}>
+      <SideBar activeItem='Meetings'/>
       <TopBar />
 
       <div className={`columns ${styles.wrapper}`}>
